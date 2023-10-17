@@ -1,6 +1,6 @@
-import css from './Statistics.module.css';
+import css from './StatisticsList.module.css';
 
-export const Statistics = ({ title = false, stats }) => {
+export const StatisticsList = ({ title = null, stats }) => {
   return (
     <section className={css.section}>
       {title && <h2 className={css.title}>{title}</h2>}

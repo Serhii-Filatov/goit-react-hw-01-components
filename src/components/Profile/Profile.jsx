@@ -1,3 +1,4 @@
+import { ProfileItem } from './ProfileItem';
 import css from './Profile.module.css';
 
 export const Profile = ({ username, tag, location, avatar, stats }) => {
@@ -16,18 +17,9 @@ export const Profile = ({ username, tag, location, avatar, stats }) => {
       </div>
 
       <ul className={css.stats}>
-        <li className={css.flexItem}>
-          <span className={css.label}>Followers</span>
-          <span className={css.quantity}>{stats.followers}</span>
-        </li>
-        <li className={css.flexItem}>
-          <span className={css.label}>Views</span>
-          <span className={css.quantity}>{stats.views}</span>
-        </li>
-        <li className={css.flexItem}>
-          <span className={css.label}>Likes</span>
-          <span className={css.quantity}>{stats.likes}</span>
-        </li>
+        <ProfileItem title="Followers" props={stats.followers} />
+        <ProfileItem title="Views" props={stats.views} />
+        <ProfileItem title="Likes" props={stats.likes} />
       </ul>
     </div>
   );

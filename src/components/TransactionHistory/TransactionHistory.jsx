@@ -12,12 +12,12 @@ export const TransactionHistory = ({ items }) => {
       </thead>
       <tbody>
         {items.map(({ id, type, amount, currency }, index) => {
-          const color = index % 2 === 0 ? '#fff' : '#C0C0C0';
-          const statusStyle = {
-            backgroundColor: color,
-          };
           return (
-            <tr key={id} className={css.trTransaction} style={statusStyle}>
+            <tr
+              key={id}
+              className={css.trTransaction}
+              style={{ backgroundColor: index % 2 === 0 ? '#fff' : '#C0C0C0' }}
+            >
               <td>{type}</td>
               <td>{amount}</td>
               <td>{currency}</td>
